@@ -13,6 +13,8 @@ const Step2 = () => {
 
     const submeter = () => {
         cadastrarUsuario(form)
+
+        
     }
 
     const form = {
