@@ -1,0 +1,13 @@
+.news{
+    top:3%;
+    left:0% !important;
+    width: 100% !important;
+}
+
+.news_header{
+    left:10%;
+}
+.page_container_news{
+    width: 100%;
+    height: auto;
+}

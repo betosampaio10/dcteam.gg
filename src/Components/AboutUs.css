@@ -1,0 +1,140 @@
+
+@font-face {
+    font-family: Gotham-Book;
+    src: url(../Assets/Fontes/Gotham-Book.otf);
+}
+@font-face {
+    font-family: Gotham-Bold;
+    src: url(../Assets/Fontes/Gotham-Bold.otf);
+}
+.aboutus{
+    top:3%;
+    left:0% !important;
+    width: 100% !important;
+}
+.aboutus_text{
+    left:10%;
+    position: relative;
+    top:50px;
+    width: 80%;
+    overflow-wrap: break-word;
+}
+
+.aboutus_text span{
+    color: black;
+    font-family: Gotham-Book;
+    font-size: 18px;
+}
+
+.about_header{
+    left:10%;
+}
+
+.staff_header{
+    left:10%;
+    position: relative;
+    background-color:white;
+    top: 80px;
+    z-index:9;
+}
+
+.staff_header span{
+    color: orange;
+    font-family: Gotham-Book;
+    font-size: 18px;
+    z-index:9;
+}
+.staff_header .traces{
+    background-color: white;
+    z-index:9;
+}
+
+.staff_container{
+    display:block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color:orange;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    top: 25px;
+}
+
+.container_start{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 80px;
+    padding: 10px;
+}
+
+.user{
+    margin-right: 10px;
+}
+.user img{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+.user .title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size:18px;
+    color: white;
+    font-family: Gotham-Bold;
+    text-transform: uppercase;
+}
+.user .cargo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size:15px;
+    color: white;
+    font-family: Gotham-Book;
+    text-transform: uppercase;
+
+}
+.user .sociais{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.user .sociais a {
+    text-decoration: none;
+    color: white;
+    font-size: 21px;
+}
+
+.user .sociais svg {
+    margin-top:5px;
+    margin-right:5px;
+    display: block;
+}
+
+.user .sociais ul {
+    margin: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    float: right;
+}
+.container_start .ant-col-3 {
+    display: block;
+    flex: 0 0 30%;
+    overflow-wrap: break-word;
+    color: white;
+    margin-top: 50px;
+    padding-bottom: 25px;
+}
+.container_start .ant-row-space-around {
+    justify-content: space-around;
+    height: 100%;
+    width: 80vw;
+    top: 10px;
+    position: relative;
+}

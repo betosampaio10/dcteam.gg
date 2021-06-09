@@ -1,0 +1,92 @@
+
+@font-face {
+    font-family: Gotham-Book;
+    src: url(../Assets/Fontes/Gotham-Book.otf);
+}
+@font-face {
+    font-family: Gotham-Bold;
+    src: url(../Assets/Fontes/Gotham-Bold.otf);
+}
+.aboutus{
+    top:3%;
+    left:0% !important;
+    margin-bottom: 5%;
+    width: 100% !important;
+}
+.aboutus_text{
+    left:10%;
+    position: relative;
+    top:50px;
+    bottom:50px;
+    width: 80%;
+    overflow-wrap: break-word;
+}
+
+.aboutus_text span{
+    color: black;
+    font-family: Gotham-Book;
+    font-size: 14px;
+}
+
+.about_header{
+    left:10%;
+}
+
+.container_start .ant-col-3 {
+    display: block;
+    flex: 0 0 30%;
+    overflow-wrap: break-word;
+    color: white;
+    margin-top: 50px;
+    padding-bottom: 25px;
+}
+.container_start .ant-row-space-around {
+    justify-content: space-around;
+    height: 100%;
+    width: 80vw;
+    top: 10px;
+    position: relative;
+}
+
+.container_header span{
+    position: absolute;
+    font-size: 14px;
+    color: white;
+    transform: skew(35deg);
+}
+
+.container_header{
+    width: 130px;
+}
+
+.container_header .traces {
+    position: relative;
+    right: -80px;
+    width: 5px;
+    height: 100%;
+    background-color: orange;
+    margin-left: 5px;
+}
+
+.button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 5px;
+    font-size: 20px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.img {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+}
+
+.info {
+    font-size: 10px;
+}

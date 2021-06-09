@@ -1,0 +1,40 @@
+.Mobiledropdown-menu {
+  
+    position: static;
+    float: initial;
+    min-width: initial;
+    padding: initial;
+    margin: initial;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-radius: initial;
+    -webkit-box-shadow: initial;
+    box-shadow: initial;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+.dropdown-item {
+  padding-left: 2.75rem;
+  font-size: 1rem;
+}
+.dropdown-item {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.dropdown-item {
+  position: relative;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  clear: both;
+  padding-left:10px;
+  font-weight: normal;
+  color: rgba(0,0,0,0.86);
+  text-align: inherit;
+  font-size: 12px;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
