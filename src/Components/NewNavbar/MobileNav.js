@@ -95,7 +95,7 @@ const MobileNav = ({ width, logoUrl, background, socialIcon }) => {
               </NavLink>
           </li>
           <li>
-              <NavLink exact to="/" onClick={() => {window.location.href="https://shop.dcteam.gg/"}}  activeClassName="home" >
+              <NavLink exact to="/" onClick={() => {window.location.href="/campeonato"}}  activeClassName="home" >
                 CAMPEONATO
               </NavLink>
           </li>

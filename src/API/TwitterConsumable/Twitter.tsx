@@ -24,7 +24,6 @@ function getData(ajaxurl: string) {
     },
     success: function (data) {
         data = JSON.parse(data.split("window._sharedData = ")[1].split(";</script>")[0]).entry_data.ProfilePage[0].graphql;
-        console.log(data);
     },
     type: 'GET',
   });

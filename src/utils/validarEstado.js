@@ -10,8 +10,8 @@ export const useValidarEstado = (event) => {
       setMsg('Campo obrigatório')
       navigation.alterarEstado.alterarStatusEstado(false)
     }
-    else if (val.length < 4) {
-      setMsg('Campo deve conter mais do que 4 caracteres')
+    else if (val.length < 2) {
+      setMsg('Campo deve conter mais do que 2 caracteres')
       navigation.alterarEstado.alterarStatusEstado(false)
     }
     else {

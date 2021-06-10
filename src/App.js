@@ -25,20 +25,20 @@ class App extends Component {
         <ReactNavbar color="rgb(32, 32, 32)" logo="https://i.imgur.com/PUKEy4i.png" />
         <div className="photo-render">
           <div className="render-notices">
-            <NoticesGrid />
+            
           </div>
         </div>
         <div id="content-wrap">
           <Router>
             <div className="render-content">
               <Switch>
-                  <Route exact path={'/'} component={Main} />
-                  <Route path={'/aboutus'} component={withRouter(AboutUs)} />
-                  <Route path={'/pubgm'} component={Pubgm} />
-                  <NavigationProvider>
+                <Route exact path={'/'} component={Main} />
+                <Route path={'/aboutus'} component={withRouter(AboutUs)} />
+                <Route path={'/pubgm'} component={Pubgm} />
+                <NavigationProvider>
                   <Route path={'/campeonato'} component={Campeonato} />
-                  </NavigationProvider>
-                  <Route component={NotFound} />
+                </NavigationProvider>
+                <Route component={NotFound} />
               </Switch>
             </div>
           </Router>

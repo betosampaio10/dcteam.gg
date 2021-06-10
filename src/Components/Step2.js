@@ -10,11 +10,11 @@ import './Inscrever.css';
 const Step2 = () => {
     const navigation = useContext(NavigationContext)
     const [cadastrarUsuario] = useSubmeterCadastro()
+    const pagamento = ""
 
     const submeter = () => {
         cadastrarUsuario(form)
-
-        
+        navigation.alterarStep.alterarStep(3)
     }
 
     const form = {
@@ -33,7 +33,9 @@ const Step2 = () => {
         cidade: navigation.alterarCidade.cidade,
         estado: navigation.alterarEstado.estado,
         tamanhoJersey: navigation.alterarTamanhoJersey.tamanhoJersey,
-        personalizacao: navigation.alterarPersonalizacao.personalizacao
+        personalizacaoNome: navigation.alterarPersonalizacaoNome.personalizacaoNome,
+        personalizacaoNumero: navigation.alterarPersonalizacaoNumero.personalizacaoNumero,
+        pagamento
     }
 
     return (

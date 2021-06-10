@@ -1,17 +1,43 @@
-import React, { useState, useEffect, Component, useContext } from "react";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Row, Col, Divider } from 'antd';
+import React, {  useEffect, useContext } from "react";
 import banner from '../Assets/Times/fifa_banner2.png';
 import premiacao from '../Assets/Times/premiacao_campeonato.png';
 import { NavigationContext } from '../contexts/navigationContext'
 import Inscrever from './Inscrever'
+import { useListarUsuarios } from '../utils/listarUsuarios'
 
 import './Campeonato.css';
 
 const Campeonato = () => {
 
+	const [buscarUsuario] = useListarUsuarios()
 	const navigation = useContext(NavigationContext)
+
+	useEffect(() => {
+		buscarUsuario()
+	}, [])
+
+	useEffect(() => {
+		let keys = []
+		if (navigation.alterarListaUsuarios.listaUsuarios != null) {
+			keys = Object.keys(navigation.alterarListaUsuarios.listaUsuarios)
+		}
+		let cpfs = []
+		let idpsn = []
+		let emails = []
+		let totalInscritos = 0
+		keys.map(key => {
+			emails.push(navigation.alterarListaUsuarios.listaUsuarios[key].email)
+			idpsn.push(navigation.alterarListaUsuarios.listaUsuarios[key].idPsn)
+			cpfs.push(navigation.alterarListaUsuarios.listaUsuarios[key].cpf)
+			if (navigation.alterarListaUsuarios.listaUsuarios[key].pagamento) {
+				totalInscritos = totalInscritos + 1
+			}
+		})
+		navigation.alterarListaCpf.alterarListaCpf(cpfs)
+		navigation.alterarListaIdPsn.alterarListaIdPsn(idpsn)
+		navigation.alterarListaEmail.alterarListaEmail(emails)
+		navigation.alterarTotalInscritos.alterarTotalInscritos(totalInscritos)
+	}, [navigation.alterarListaUsuarios.listaUsuarios])
 
 	return (
 		<div className="center_container aboutus">
@@ -42,14 +68,20 @@ const Campeonato = () => {
 					<p></p>
 					<h3>Pagamento e Envio das Premiações:</h3>
 					<p></p>
-					<p>As premiações em dinheiro serão enviadas aos ganhadores no prazo de 120 horas úteis, via transferência bancária ou PIX, respeitando o tempo de transação ocorrido pelos bancos. Os itens da premiação serão enviados em até 15 dias úteis, podendo sofrer alterações devido ao prazo das transportadoras.</p>
+					<p>Taxa de inscrição: R$180,00</p>
 					<p></p>
-					<p>- Transmissão e Narração profissional da GRANDE FINAL</p>
-					<p>- Suporte via Whatsapp.</p>
-
-					<div>
-						<button className="button" onClick={() => navigation.alterarModalInscrever.alterarModalInscrever(true)}>Inscrever-se</button>
-					</div>
+					<p>As premiações em dinheiro serão enviadas aos ganhadores no prazo de 120 horas úteis, via PIX. Os itens da premiação serão enviados em até 15 dias úteis, podendo sofrer alterações devido ao prazo das transportadoras.</p>
+					<p></p>
+					<p className='mb-0'>- Transmissão e Narração profissional da GRANDE FINAL</p>
+					<a href='https://www.twitch.tv/dcteam_gg' className='mt-0'>https://www.twitch.tv/dcteam_gg</a>
+					<p></p>
+					<p>- Suporte via Whatsapp (11) 93758-2250</p>
+					{navigation.alterarTotalInscritos.totalInscritos < 64 &&
+						<div>
+							<button className="button" onClick={() => navigation.alterarModalInscrever.alterarModalInscrever(true)}>Inscrever-se</button>
+						</div>
+					}
+					{navigation.alterarTotalInscritos.totalInscritos >= 64 && <p className='text-danger avisos'>Inscrições Encerradas!!</p>}
 					<Inscrever
 						show={navigation.alterarModalInscrever.modalInscrever}
 						onHide={() => navigation.alterarModalInscrever.alterarModalInscrever(false)} />

@@ -182,16 +182,24 @@ const useConsumeBairro = () => {
     return [bairro, alterarBairro, statusBairro, alterarStatusBairro]
 }
 
-const useConsumePersonalizacao = () => {
-    const [personalizacao, setPersonalizacao] = useState('')
-    const alterarPersonalizacao = personalizacao => {
-        setPersonalizacao(personalizacao)
+const useConsumePersonalizacaoNome = () => {
+    const [personalizacaoNome, setPersonalizacaoNome] = useState('')
+    const alterarPersonalizacaoNome = personalizacaoNome => {
+        setPersonalizacaoNome(personalizacaoNome)
     }
-    return [personalizacao, alterarPersonalizacao]
+    return [personalizacaoNome, alterarPersonalizacaoNome]
+}
+
+const useConsumePersonalizacaoNumero = () => {
+    const [personalizacaoNumero, setPersonalizacaoNumero] = useState('')
+    const alterarPersonalizacaoNumero = personalizacaoNumero => {
+        setPersonalizacaoNumero(personalizacaoNumero)
+    }
+    return [personalizacaoNumero, alterarPersonalizacaoNumero]
 }
 
 const useConsumeTamanhoJersey = () => {
-    const [tamanhoJersey, setTamanhoJersey] = useState('P')
+    const [tamanhoJersey, setTamanhoJersey] = useState('M')
     const alterarTamanhoJersey = tamanhoJersey => {
         setTamanhoJersey(tamanhoJersey)
     }
@@ -230,6 +238,14 @@ const useConsumeListaEmail = () => {
     return [listaEmail, alterarListaEmail]
 }
 
+const useConsumeTotalInscritos = () => {
+    const [totalInscritos, setTotalInscritos] = useState({})
+    const alterarTotalInscritos = totalInscritos => {
+        setTotalInscritos(totalInscritos)
+    }
+    return [totalInscritos, alterarTotalInscritos]
+}
+
 export const NavigationProvider = ({ children }) => {
     const [modalInscrever, alterarModalInscrever] = useConsumeModalInscrever()
     const [step, alterarStep] = useConsumeAlterarStep()
@@ -247,12 +263,14 @@ export const NavigationProvider = ({ children }) => {
     const [complemento, alterarComplemento] = useConsumeComplemento()
     const [cidade, alterarCidade, statusCidade, alterarStatusCidade] = useConsumeCidade()
     const [bairro, alterarBairro, statusBairro, alterarStatusBairro] = useConsumeBairro()
-    const [personalizacao, alterarPersonalizacao] = useConsumePersonalizacao()
+    const [personalizacaoNome, alterarPersonalizacaoNome] = useConsumePersonalizacaoNome()
+    const [personalizacaoNumero, alterarPersonalizacaoNumero] = useConsumePersonalizacaoNumero()
     const [tamanhoJersey, alterarTamanhoJersey] = useConsumeTamanhoJersey()
     const [listaUsuarios, alterarListaUsuarios] = useConsumeListaUsuarios()
     const [listaCpf, alterarListaCpf] = useConsumeListaCpf()
     const [listaIdPsn, alterarListaIdPsn] = useConsumeListaIdPsn()
     const [listaEmail, alterarListaEmail] = useConsumeListaEmail()
+    const [totalInscritos, alterarTotalInscritos] = useConsumeTotalInscritos()
  
 
     return (
@@ -305,8 +323,11 @@ export const NavigationProvider = ({ children }) => {
             alterarBairro: {
                 bairro, alterarBairro, statusBairro, alterarStatusBairro
             },
-            alterarPersonalizacao: {
-                personalizacao, alterarPersonalizacao
+            alterarPersonalizacaoNome: {
+                personalizacaoNome, alterarPersonalizacaoNome
+            },
+            alterarPersonalizacaoNumero: {
+                personalizacaoNumero, alterarPersonalizacaoNumero
             },
             alterarTamanhoJersey: {
                 tamanhoJersey, alterarTamanhoJersey
@@ -322,6 +343,9 @@ export const NavigationProvider = ({ children }) => {
             },
             alterarListaIdPsn: {
                 listaIdPsn, alterarListaIdPsn
+            },
+            alterarTotalInscritos: {
+                totalInscritos, alterarTotalInscritos
             }
             
         }

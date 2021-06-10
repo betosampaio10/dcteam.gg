@@ -15,7 +15,6 @@ import { useValidarEmail } from '../utils/validarEmail';
 import { useValidarIdade } from '../utils/validarIdade';
 import { useValidarCelular } from '../utils/validarCelular';
 import { useValidarCPF } from '../utils/validarCpf';
-import { useListarUsuarios } from '../utils/listarUsuarios'
 
 import './Inscrever.css';
 
@@ -23,7 +22,7 @@ import './Inscrever.css';
 const Step1 = () => {
 
     const navigation = useContext(NavigationContext)
-    const [msgCep, enderecoDisabled, logradouro, bairro, municipio, uf, preenchido, buscarCep] = useValidarCep()
+    const [msgCep, validarCep] = useValidarCep()
     const [msgEndereco, validarEndereco] = useValidarEndereco()
     const [msgNumero, validarNumero] = useValidarNumero()
     const [msgCidade, validarCidade] = useValidarCidade()
@@ -37,30 +36,10 @@ const Step1 = () => {
     const [msgIdade, validarIdade] = useValidarIdade()
     const [msgCpf, validarCPF] = useValidarCPF()
     const [msgAvancar, setMsgAvancar] = useState(false)
-    const [buscarUsuario] = useListarUsuarios()
 
     const selecionarJersey = tam => {
         navigation.alterarTamanhoJersey.alterarTamanhoJersey(tam)
     }
-
-    useEffect(() => {
-        buscarUsuario()
-    }, [])
-
-    useEffect(() => {
-        let keys = Object.keys(navigation.alterarListaUsuarios.listaUsuarios)
-        let cpfs = []
-        let idpsn = []
-        let emails = []
-        keys.map(key => {
-            emails.push(navigation.alterarListaUsuarios.listaUsuarios[key].email)
-            idpsn.push(navigation.alterarListaUsuarios.listaUsuarios[key].idPsn)
-            cpfs.push(navigation.alterarListaUsuarios.listaUsuarios[key].cpf)
-        })
-        navigation.alterarListaCpf.alterarListaCpf(cpfs)
-        navigation.alterarListaIdPsn.alterarListaIdPsn(idpsn)
-        navigation.alterarListaEmail.alterarListaEmail(emails)
-    }, [navigation.alterarListaUsuarios.listaUsuarios])
 
     const avancar = () => {
         if (
@@ -210,7 +189,7 @@ const Step1 = () => {
                             maxLength="255"
                             value={navigation.alterarCep.cep}
                             onChange={evt => navigation.alterarCep.alterarCep(evt.target.value)}
-                            onBlur={buscarCep}
+                            onBlur={validarCep}
                             mascara="99999-999"
                             required
                         />
@@ -224,7 +203,6 @@ const Step1 = () => {
                             name="endereco"
                             value={navigation.alterarEndereco.endereco}
                             onChange={evt => navigation.alterarEndereco.alterarEndereco(evt.target.value)}
-                            disabled={enderecoDisabled}
                             onBlur={validarEndereco}
                             required
                         />
@@ -267,7 +245,6 @@ const Step1 = () => {
                             name="bairro"
                             value={navigation.alterarBairro.bairro}
                             onChange={evt => navigation.alterarBairro.alterarBairro(evt.target.value)}
-                            disabled={enderecoDisabled}
                             onBlur={validarBairro}
                             required
                         />
@@ -284,7 +261,6 @@ const Step1 = () => {
                             name="cidade"
                             value={navigation.alterarCidade.cidade}
                             onChange={evt => navigation.alterarCidade.alterarCidade(evt.target.value)}
-                            disabled={enderecoDisabled}
                             onBlur={validarCidade}
                             required
                         />
@@ -300,7 +276,6 @@ const Step1 = () => {
                             maxLength="255"
                             value={navigation.alterarEstado.estado}
                             onChange={evt => navigation.alterarEstado.alterarEstado(evt.target.value)}
-                            disabled={enderecoDisabled}
                             onBlur={validarEstado}
                             required
                         />
@@ -314,18 +289,32 @@ const Step1 = () => {
                     <div class='col-6'>
                         <label>Tamanho da Camiseta *</label>
                         <div>
-                            <input type="radio" name="jersey" onClick={() => selecionarJersey("P")} defaultChecked /> P
-                            <input type="radio" name="jersey" onClick={() => selecionarJersey("M")} class='ml-3' /> M
-                            <input type="radio" name="jersey" onClick={() => selecionarJersey("G")} class='ml-3' /> G
+                            <input type="radio" name="jersey" onClick={() => selecionarJersey("PP")}  /> PP
+                            <input type="radio" name="jersey" onClick={() => selecionarJersey("P")} class='ml-2' /> P
+                            <input type="radio" name="jersey" onClick={() => selecionarJersey("M")} class='ml-2' defaultChecked/> M
+                            <input type="radio" name="jersey" onClick={() => selecionarJersey("G")} class='ml-2' /> G
+                            <input type="radio" name="jersey" onClick={() => selecionarJersey("GG")} class='ml-2' /> GG
+                            <input type="radio" name="jersey" onClick={() => selecionarJersey("EXG")} class='ml-2' /> EXG
+                            <input type="radio" name="jersey" onClick={() => selecionarJersey("XGG")} class='ml-2' /> XGG
+                            <input type="radio" name="jersey" onClick={() => selecionarJersey("XXGG")} class='ml-2' /> XXGG
                         </div>
 
                     </div>
-                    <div class='col-6'>
-                        <label>Personalização da camiseta</label>
+                    <div class='col-3'>
+                        <label>Nome Camiseta</label>
+                        <Input
+                            name="personalizacaoNome"
+                            value={navigation.alterarPersonalizacaoNome.personalizacaoNome}
+                            onChange={evt => navigation.alterarPersonalizacaoNome.alterarPersonalizacaoNome(evt.target.value)}
+                        />
+                    </div>
+                    <div class='col-3'>
+                        <label>Numero Camiseta</label>
                         <Input
                             name="personalizacao"
-                            value={navigation.alterarPersonalizacao.personalizacao}
-                            onChange={evt => navigation.alterarPersonalizacao.alterarPersonalizacao(evt.target.value)}
+                            type='number'
+                            value={navigation.alterarPersonalizacaoNumero.personalizacaoNumero}
+                            onChange={evt => navigation.alterarPersonalizacaoNumero.alterarPersonalizacaoNumero(evt.target.value)}
                         />
                     </div>
                 </div>

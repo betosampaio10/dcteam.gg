@@ -5,14 +5,14 @@ import "firebase/firestore"
 import "firebase/storage"
 
 var firebaseConfig = {
-    apiKey: "AIzaSyBB9b9tNzVOAWqNdXVgVPnx_wg9RlNswBs",
-    authDomain: "dcteam-6f065.firebaseapp.com",
-    projectId: "dcteam-6f065",
-    storageBucket: "dcteam-6f065.appspot.com",
-    messagingSenderId: "1016428840669",
-    appId: "1:1016428840669:web:d0d4b08f55e7347b8bfd34",
-    measurementId: "G-C7QVRWF0LP"
-  };
+  apiKey: "AIzaSyDSjDRCwCo3V0sJRHwBcLWCMR23NRUKKOc",
+  authDomain: "dcteam-48c2d.firebaseapp.com",
+  projectId: "dcteam-48c2d",
+  storageBucket: "dcteam-48c2d.appspot.com",
+  messagingSenderId: "176026641634",
+  appId: "1:176026641634:web:b8be24bf2f04344dd06abb",
+  measurementId: "G-03S5ZSMK4J"
+};
 
   firebase.initializeApp(firebaseConfig)
  
