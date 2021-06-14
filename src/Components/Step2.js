@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { NavigationContext } from '../contexts/navigationContext'
 import { FormGroup } from 'reactstrap';
-import QrCode from '../Assets/Logo/qrCode2.jpeg'
+import QrCode from '../Assets/Logo/qrCodeCampeonato.jpeg'
 import { useSubmeterCadastro } from '../utils/submeterCadastro'
 
 import './Inscrever.css';

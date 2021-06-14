@@ -19,7 +19,7 @@ export const SocialIcons = [
   },
   {
     name: "Instagram",
-    url: "https://www.instagram.com/dcteam_gg/",
+    url: "https://www.instagram.com/dcteam.gg/",
     icon: ["fab", "instagram"],
   },
   {
@@ -113,18 +113,6 @@ export const ReactNavbar = ({ color, logo }) => {
                                 <NavLink to="/" onClick={() => {window.location.href="/news"}} className="home">
                                   NOTÍCIAS
                                 </NavLink>
-                            </li>
-                            <li onClick={onClick}>
-                                <NavLink exact to="/" className="home">
-                                  LINES <FontAwesomeIcon icon={faChevronDown} />
-                                </NavLink>
-                                {dropdown && <Dropdown 
-                                  	menu={[
-                                      {name: "VALORANT", img: "https://i.imgur.com/6gahkf7.png",  to: "/valorant"},
-                                      {name: "PUBG MOBILE", img: "https://www.pubgmobile.com/pt/event/brandassets/images/down-logo8.png",  to: "/pubgm"},
-                                      {name: "FIFA", img: "https://i.imgur.com/dOg0LS0.png",  to: "/fifa"},
-                                    ]}
-                                  />}
                             </li>
                             <li>
                                 <NavLink exact to="/" onClick={() => {window.location.href="https://shop.dcteam.gg/"}} className="home">
