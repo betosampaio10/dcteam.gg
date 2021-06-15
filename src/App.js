@@ -15,6 +15,7 @@ import Campeonato from './Components/Campeonato/Campeonato'
 //import News from './Components/News'
 import Pubgm from './Components/Lines/Pubgm'
 import NotFound from './Components/NotFound'
+import logo from './Assets/Logo/Logo1.png'
 
 import { NavigationProvider } from './contexts/navigationContext'
 
@@ -22,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <div id="page-container">
-        <ReactNavbar color="rgb(32, 32, 32)" logo="https://i.imgur.com/PUKEy4i.png" />
+        <ReactNavbar color="rgb(32, 32, 32)" logo={logo} />
         <div className="photo-render">
           <div className="render-notices">
             
