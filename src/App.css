@@ -67,7 +67,7 @@ html, body {
     background-image: url(https://i.imgur.com/XIEifff.jpg);
     background-size: cover;
     width: 100%;
-    min-height: 100vh;
+    min-height: 50vh;
 }
 
 #content-wrap {

@@ -11,7 +11,7 @@ import './App.css';
 
 import Main from './Components/Main'
 import AboutUs from './Components/AboutUs'
-import Campeonato from './Components/Campeonato'
+import Campeonato from './Components/Campeonato/Campeonato'
 //import News from './Components/News'
 import Pubgm from './Components/Lines/Pubgm'
 import NotFound from './Components/NotFound'

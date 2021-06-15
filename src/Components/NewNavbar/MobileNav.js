@@ -77,18 +77,6 @@ const MobileNav = ({ width, logoUrl, background, socialIcon }) => {
                 NOTÍCIAS
               </NavLink>
           </li>
-          <li onClick={onClick}>
-              <NavLink exact to="/" activeClassName="home" >
-                LINES <FontAwesomeIcon icon={faChevronDown} />
-                {dropdown && <MobileDropdown 
-                  menu={[
-                    {name: "VALORANT", img: "https://i.imgur.com/6gahkf7.png",  to: "/valorant"},
-                    {name: "PUBG MOBILE", img: "https://www.pubgmobile.com/pt/event/brandassets/images/down-logo8.png",  to: "/pubgm"},
-                    {name: "FIFA", img: "https://i.imgur.com/dOg0LS0.png",  to: "/fifa"},
-                  ]}
-                />}
-              </NavLink>
-          </li>
           <li>
               <NavLink exact to="/" onClick={() => {window.location.href="https://shop.dcteam.gg/"}}  activeClassName="home" >
                 LOJA
