@@ -42,14 +42,18 @@ const Step2 = () => {
         <div>
             <FormGroup>
                 <div>
-                    <p>ATENÇÃO: Para confirmar sua inscrição você deve realizar o pagamento para o PIX abaixo. Inserir o seu CPF cadastrado nas informações da transferência do pix e enviar o comprovante para o e-mail braz@dcteam.gg com seu CPF, email e login PSN.</p>
-                </div>
-                <div class='row'>
-                    <div class='col-2'>
-                        <img src={QrCode} className="qrCode"></img>
-                    </div>
-                    <div class='col-10 mt-4'>
-                        <p>Chave PIX: 2b45f00b-f216-49cc-a23d-d3729575882d</p>
+                    <p>1 - Abra o APP do seu banco.</p>
+                    <p>2 - Vá até PIX.</p>
+                    <p>3 - Pagar QR Code.</p>
+                    <p>4 - Apontar a câmera do seu celular para o QR Code abaixo:</p>
+                    <img src={QrCode} className="qrCode"></img>
+                    <p>- Nome: Rony Ferreira Gomes</p>
+                    <p>- CPF: *.276.038-*</p>
+                    <p>- Banco Bradesco S.A.</p>
+                    <p>Chave PIX: pix.dcteam@gmail.com</p>
+                    <p>5 - Confirme o pagamento.</p>
+                    <div>
+                        <p>ATENÇÃO: Para confirmar sua inscrição você deve realizar o pagamento do PIX, inserir o seu CPF cadastrado nas informações da transferência do pix e enviar o comprovante para o e-mail braz@dcteam.gg com seu CPF, email e login PSN.</p>
                     </div>
                 </div>
             </FormGroup>

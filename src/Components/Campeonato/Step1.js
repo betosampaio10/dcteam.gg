@@ -69,7 +69,7 @@ const Step1 = () => {
         <div>
             <FormGroup>
                 <div>
-                    <p>Taxa de inscrição R$180,00.</p>
+                    <p>Taxa de inscrição R$140,00.</p>
                     <p>Na compra da sua inscrição você GANHA uma Camiseta Jersey da DC Team!</p>
                 </div>
 
@@ -88,7 +88,7 @@ const Step1 = () => {
                         }
                     </div>
                     <div class='col-6'>
-                        <label>Nome do Time *</label>
+                        <label>Nome da Equipe Ultimate Team *</label>
                         <Input
                             name="nome"
                             value={navigation.alterarNomeTime.nomeTime}
@@ -134,7 +134,7 @@ const Step1 = () => {
                     </div>
 
                     <div class='col-6'>
-                        <label>Nome *</label>
+                        <label>Nome Completo *</label>
                         <Input
                             name="nome"
                             value={navigation.alterarNome.nome}
@@ -291,17 +291,20 @@ const Step1 = () => {
                         <div>
                             <input type="radio" name="jersey" onClick={() => selecionarJersey("PP")}  /> PP
                             <input type="radio" name="jersey" onClick={() => selecionarJersey("P")} class='ml-2' /> P
-                            <input type="radio" name="jersey" onClick={() => selecionarJersey("M")} class='ml-2' defaultChecked/> M
+                            <input type="radio" name="jersey" onClick={() => selecionarJersey("M")} class='ml-2' /> M
                             <input type="radio" name="jersey" onClick={() => selecionarJersey("G")} class='ml-2' /> G
                             <input type="radio" name="jersey" onClick={() => selecionarJersey("GG")} class='ml-2' /> GG
                             <input type="radio" name="jersey" onClick={() => selecionarJersey("EXG")} class='ml-2' /> EXG
                             <input type="radio" name="jersey" onClick={() => selecionarJersey("XGG")} class='ml-2' /> XGG
                             <input type="radio" name="jersey" onClick={() => selecionarJersey("XXGG")} class='ml-2' /> XXGG
                         </div>
+                        {
+                            navigation.alterarTamanhoJersey.tamanhoJersey == '' && <p className='text-danger avisos'>Selecionar tamanho da camiseta!</p>
+                        }
 
                     </div>
                     <div class='col-3'>
-                        <label>Nome Camiseta</label>
+                        <label>Nick Camiseta</label>
                         <Input
                             name="personalizacaoNome"
                             value={navigation.alterarPersonalizacaoNome.personalizacaoNome}

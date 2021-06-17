@@ -25,3 +25,8 @@
 .final {
     font-size: 200%;
 }
+
+.check {
+    font-size: 20px;
+    color: green;
+}

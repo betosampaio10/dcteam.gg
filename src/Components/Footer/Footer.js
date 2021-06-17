@@ -22,14 +22,6 @@ export const Footer = () => {
                 <li><a href="/aboutus">F.A.Q</a></li>
             </ul>
             </div>
-            <div className="ft-main-item">
-            <h2 className="ft-title">LINES</h2>
-            <ul>
-                <li><a href="/valorant">VALORANT</a></li>
-                <li><a href="/pubgm">PUBG MOBILE</a></li>
-                <li><a href="/fifa">FIFA</a></li>
-            </ul>
-            </div>
         </section>
         <section className="ft-social">
             <a className="follorthethunder">#FollowTheThunder</a><br />

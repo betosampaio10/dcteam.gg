@@ -199,7 +199,7 @@ const useConsumePersonalizacaoNumero = () => {
 }
 
 const useConsumeTamanhoJersey = () => {
-    const [tamanhoJersey, setTamanhoJersey] = useState('M')
+    const [tamanhoJersey, setTamanhoJersey] = useState('')
     const alterarTamanhoJersey = tamanhoJersey => {
         setTamanhoJersey(tamanhoJersey)
     }
