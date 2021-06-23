@@ -41,9 +41,7 @@ const Campeonato = () => {
 
 	return (
 		<div className="center_container aboutus">
-			<div>
-				<img src={banner} className="img_banner"></img>
-			</div>
+			
 			<div className="container_header about_header">
 				<span>Lightning Cup</span>
 				<div className="traces"></div>
@@ -54,13 +52,7 @@ const Campeonato = () => {
 				<span className='mb-5'>
 					<p>Lightning Cup é o primeiro campeonato de E-sports na modalidade FIFA Ultimate Team (Plataforma Playstation) organizado pela DC TEAM. Empresa voltada para o cenário de jogos virtuais, com objetivo de criar interatividade entre os competidores de todo o Brasil. A organização é realizada pela equipe da DC TEAM, que oferecerá todo o suporte durante o campeonato. Os jogos serão inicialmente em fase de grupos, podendo ser agendados em um horário acordado entre os adversários. A partir das quartas de final, os jogos terão data e horário fixo, a serem definidos pela organização do campeonato. A final será com jogos de ida e volta.</p>
 					<p></p>
-					<h3>Inscrições</h3>
 					<p></p>
-					<p>As incrições vão de 17 de junho à 02 de julho ate as 23h59.</p>
-					<p></p>
-					<h3>Campeonato</h3>
-					<p></p>
-					<p>O Campeonato ocorrerá do dia 09 de julho à 16 de julho.</p>
 					<p></p>
 				</span>
 			</div>

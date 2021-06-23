@@ -11,10 +11,13 @@ import { useValidarBairro } from '../../utils/validarBairro'
 import { useValidarIdPsn } from '../../utils/validarIdPsn';
 import { useValidarNomeTime } from '../../utils/validarNomeTime';
 import { useValidarNome } from '../../utils/validarNome';
+import { useValidarNomeResponsavel } from '../../utils/validarNomeResponsavel';
 import { useValidarEmail } from '../../utils/validarEmail';
 import { useValidarIdade } from '../../utils/validarIdade';
 import { useValidarCelular } from '../../utils/validarCelular';
 import { useValidarCPF } from '../../utils/validarCpf';
+import { useValidarCPFResponsavel } from '../../utils/validarCpfResponsavel';
+import { useSubmeterCadastroIncompleto } from '../../utils/submeterCadastroIncompleto'
 
 import './Inscrever.css';
 
@@ -30,15 +33,44 @@ const Step1 = () => {
     const [msgBairro, validarBairro] = useValidarBairro()
     const [msgIdPsn, validarIdPsn] = useValidarIdPsn()
     const [msgNomeTime, validarNomeTime] = useValidarNomeTime()
+    const [msgNomeResponsavel, validarNomeResponsavel] = useValidarNomeResponsavel()
     const [msgNome, validarNome] = useValidarNome()
     const [msgCelular, validarCelular] = useValidarCelular()
     const [msgEmail, validarEmail] = useValidarEmail()
     const [msgIdade, validarIdade] = useValidarIdade()
     const [msgCpf, validarCPF] = useValidarCPF()
-    const [msgAvancar, setMsgAvancar] = useState(false)
+    const [msgCpfResponsavel, validarCPFResponsavel] = useValidarCPFResponsavel()
+    const [msgAvancar, setMsgAvancar] = useState(false)    
+    const [cadastrarUsuario] = useSubmeterCadastroIncompleto()
 
     const selecionarJersey = tam => {
         navigation.alterarTamanhoJersey.alterarTamanhoJersey(tam)
+    }
+
+    const submeter = () => {
+        cadastrarUsuario(form)
+    }
+
+    const form = {
+        idPsn: navigation.alterarIdPsn.idPsn,
+        nomeTime: navigation.alterarNomeTime.nomeTime,
+        idade: navigation.alterarIdade.idade,
+        cpf: navigation.alterarCpf.cpf,
+        cpfResponsavel: navigation.alterarCpfResponsavel.cpfResponsavel,
+        nome: navigation.alterarNome.nome,
+        nomeResponsavel: navigation.alterarNomeResponsavel.nomeResponsavel,
+        email: navigation.alterarEmail.email,
+        celular: navigation.alterarCelular.celular,
+        cep: navigation.alterarCep.cep,
+        endereco: navigation.alterarEndereco.endereco,
+        numero: navigation.alterarNumero.numero,
+        complemento: navigation.alterarComplemento.complemento,
+        bairro: navigation.alterarBairro.bairro,
+        cidade: navigation.alterarCidade.cidade,
+        estado: navigation.alterarEstado.estado,
+        tamanhoJersey: navigation.alterarTamanhoJersey.tamanhoJersey,
+        personalizacaoNome: navigation.alterarPersonalizacaoNome.personalizacaoNome,
+        personalizacaoNumero: navigation.alterarPersonalizacaoNumero.personalizacaoNumero
     }
 
     const avancar = () => {
@@ -47,7 +79,9 @@ const Step1 = () => {
             navigation.alterarNomeTime.statusNomeTime &&
             navigation.alterarIdade.statusIdade &&
             navigation.alterarCpf.statusCpf &&
+            navigation.alterarCpfResponsavel.statusCpfResponsavel &&
             navigation.alterarNome.statusNome &&
+            navigation.alterarNomeResponsavel.statusNomeResponsavel &&
             navigation.alterarEmail.statusEmail &&
             navigation.alterarCelular.statusCelular &&
             navigation.alterarCep.statusCep &&
@@ -57,7 +91,8 @@ const Step1 = () => {
             navigation.alterarCidade.statusCidade &&
             navigation.alterarEstado.statusEstado           
         ) {
-            navigation.alterarStep.alterarStep(2)
+            submeter()
+            navigation.alterarStep.alterarStep(2)            
             setMsgAvancar(false)
         } else {
             setMsgAvancar(true)
@@ -115,6 +150,39 @@ const Step1 = () => {
                         }
                     </div>
                 </div>
+                {navigation.alterarToggleResponsavel.toggleResponsavel &&
+                    <div class='row'>
+                        <div class='col-6'>
+                        <label>CPF do Responsável *</label>
+                        <MaskedInput
+                            name="cpfResponsavel"
+                            value={navigation.alterarCpfResponsavel.cpfResponsavel}
+                            onChange={evt => navigation.alterarCpfResponsavel.alterarCpfResponsavel(evt.target.value)}
+                            onBlur={validarCPFResponsavel}
+                            mascara="999.999.999-99"
+                            required
+                        />
+                        {
+                            !navigation.alterarCpfResponsavel.statusCpfResponsavel && msgCpfResponsavel !== '' && <p className='text-danger avisos'>{msgCpfResponsavel}</p>
+                        }
+
+                    </div>
+
+                    <div class='col-6'>
+                        <label>Nome Completo Responsável *</label>
+                        <Input
+                            name="nomeResponsavel"
+                            value={navigation.alterarNomeResponsavel.nomeResponsavel}
+                            onChange={evt => navigation.alterarNomeResponsavel.alterarNomeResponsavel(evt.target.value)}
+                            onBlur={validarNomeResponsavel}
+                            required
+                        />
+                        {
+                            !navigation.alterarNomeResponsavel.statusNomeResponsavel && msgNomeResponsavel !== '' && <p className='text-danger avisos'>{msgNomeResponsavel}</p>
+                        }
+                    </div>
+                    </div>
+                }
 
                 <div class='row'>
                     <div class='col-6'>

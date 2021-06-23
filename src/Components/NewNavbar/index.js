@@ -10,6 +10,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import MobileNav from "./MobileNav";
 import Dropdown from './Dropdown'
 library.add(fab);
+import './styles.css';
 
 export const SocialIcons = [
   {
@@ -49,7 +50,7 @@ export const ReactNavbar = ({ color, logo }) => {
   const updateWidthAndHeight = () => {
     setWidth(window.innerWidth);
   };
-  
+
   useEffect(() => {
     color ? setBackground(color) : null;
     logo ? setLogoUrl(logo) : null;
@@ -71,83 +72,87 @@ export const ReactNavbar = ({ color, logo }) => {
           socialIcon={socialIcon}
         />
       ) : (
-        <Controller>
-          <Scene triggerHook="onLeave" duration={300} pin>
-            {(progress) => (
-              <Timeline totalProgress={progress} paused>
-                <Tween
-                  from={{ height: "120px" }}
-                  to={{ height: "80px", background: background }}
-                >
-                  <div className="header">
-                    <div className="navLogo">
-                      <Router>
-                        <Link onClick={() => {window.location.href="/"}}>
-                          <div className="logo-container">
-                            <Timeline totalProgress={progress} paused>
-                              <Tween
-                                from={{ height: "120px" }}
-                                to={{ height: "70px" }}
-                              >
-                                <img
-                                  className="LogoImg"
-                                  src={logoUrl}
-                                  alt="logo"
-                                />
-                              </Tween>
-                            </Timeline>
-                          </div>
-                        </Link>
-                      </Router>
-                    </div>
+        <div className='menuNew'>
+          <Controller>
+            <Scene>
+              {(progress) => (
+                <Timeline >
+                  <Tween
+                    from={{ height: "100px" }}
+                    to={{ height: "100px", background: background }}
+                  >
+                    <div className="header">
+                      <div className="navLogo">
+                        <Router>
+                          <Link onClick={() => { window.location.href = "/" }}>
+                            <div className="logo-container">
+                              <Timeline>
+                                <Tween
+                                  from={{ height: "100px" }}
+                                  to={{ height: "100px" }}
+                                >
+                                  <img
+                                    className="LogoImg"
+                                    src={logoUrl}
+                                    alt="logo"
+                                  />
+                                </Tween>
+                              </Timeline>
+                            </div>
+                          </Link>
+                        </Router>
+                      </div>
 
-                    <div className="navLinks" >
-                      <Router>
+                      <div className="navLinks" >
+                        <Router>
+                          <ul>
+                            <li>
+                              <NavLink to="/aboutus" onClick={() => { window.location.href = "/aboutus" }} className="home">
+                                SOBRE NÓS
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink to="/" onClick={() => { window.location.href = "/news" }} className="home">
+                                NOTÍCIAS
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink exact to="/" onClick={() => { window.location.href = "https://shop.dcteam.gg/" }} className="home">
+                                LOJA
+                              </NavLink>
+                            </li>
+                            <li>
+                              <NavLink exact to="/" onClick={() => { window.location.href = "/campeonato" }} className="home">
+                                CAMPEONATO
+                              </NavLink>
+                            </li>
+                          </ul>
+                        </Router>
+                      </div>
+                      <div className="navSocial">
                         <ul>
-                            <li>
-                                <NavLink to="/aboutus" onClick={() => {window.location.href="/aboutus"}} className="home">
-                                  DC TEAM
-                                </NavLink>
+                          {socialIcon.map((icon, i) => (
+                            <li key={i}>
+                              <a target="_blank" href={icon.url}>
+                                <FontAwesomeIcon icon={icon.icon} />
+                              </a>
+                              <span className="tooltiptext">
+                                {icon.name}
+                              </span>
                             </li>
-                            <li>
-                                <NavLink to="/" onClick={() => {window.location.href="/news"}} className="home">
-                                  NOTÍCIAS
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink exact to="/" onClick={() => {window.location.href="https://shop.dcteam.gg/"}} className="home">
-                                  LOJA
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink exact to="/" onClick={() => {window.location.href="/campeonato"}} className="home">
-                                  CAMPEONATO
-                                </NavLink>
-                            </li>
+                          ))}
                         </ul>
-                      </Router>
-                    </div>
-                    <div className="navSocial">
-                      <ul>
-                        {socialIcon.map((icon, i) => (
-                          <li key={i}>
-                            <a target="_blank" href={icon.url}>
-                              <FontAwesomeIcon icon={icon.icon} />
-                            </a>
-                            <span className="tooltiptext">
-                              {icon.name}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </Tween>
-              </Timeline>
-            )}
-          </Scene>
-        </Controller>
-      )}
+                      </div>
+                    </div>  
+                    <div className='bar'></div>                
+                  </Tween>
+                </Timeline>
+              )}
+            </Scene>
+          </Controller>
+        </div>        
+      )}      
     </div>
+    
   );
 };

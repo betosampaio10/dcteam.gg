@@ -6,7 +6,7 @@ export const useListarUsuarios = () => {
     const [status, setStatus] = useState('')
     const navigation = useContext(NavigationContext)
     const buscarUsuario = async () => {
-        await firebase.database().ref('usuarios/').on('value', snapshot => {
+        await firebase.database().ref('lightningCup/finalizados/').on('value', snapshot => {
             navigation.alterarListaUsuarios.alterarListaUsuarios(snapshot.val())
         })
     }

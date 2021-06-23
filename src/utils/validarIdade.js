@@ -19,11 +19,16 @@ export const useValidarIdade = (event) => {
             navigation.alterarIdade.alterarStatusIdade(false)
         }
         else if (val < 18) {
-            setMsg('Somente permitido para maiores de 18 anos.')
-            navigation.alterarIdade.alterarStatusIdade(false)
+            navigation.alterarToggleResponsavel.alterarToggleResponsavel(true)
+            navigation.alterarIdade.alterarStatusIdade(true)
+            navigation.alterarCpfResponsavel.alterarStatusCpfResponsavel(false)
+            navigation.alterarNomeResponsavel.alterarStatusNomeResponsavel(false)
         }
         else {
             navigation.alterarIdade.alterarStatusIdade(true)
+            navigation.alterarToggleResponsavel.alterarToggleResponsavel(false)
+            navigation.alterarCpfResponsavel.alterarStatusCpfResponsavel(true)
+            navigation.alterarNomeResponsavel.alterarStatusNomeResponsavel(true)
             setMsg('')
         }
     }

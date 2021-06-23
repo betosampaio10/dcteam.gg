@@ -9,6 +9,10 @@ import Julia from '../Assets/Equipe/Julia.png'
 import Romario from '../Assets/Equipe/Romario.png'
 import Malu from '../Assets/Equipe/Malu.png'
 import Alexandre from '../Assets/Equipe/Alexandre.png'
+import Isabella from '../Assets/Equipe/Isabella.png'
+import Barbara from '../Assets/Equipe/Barbara.png'
+import Lucas from '../Assets/Equipe/Lucas.png'
+import Thiago from '../Assets/Equipe/Thiago.png'
 
 
 import './AboutUs.css';
@@ -38,7 +42,7 @@ let UserStaff = [
 		]
 	},
 	{
-		nome: "Rony Ferreira",
+		nome: "Rony 'Brazeiker'",
 		foto: Rony,
 		cargo: "Fundador e CEO",
 		sociais: [
@@ -184,6 +188,65 @@ let UserStaff = [
 				url: "https://twitter.com/AlexandreKliem1",
 				icon: ["fab", "twitter"],
 			},
+		]
+	},
+	{
+		nome: "Barbara",
+		foto: Barbara,
+		cargo: "Roteiro de Conteúdo",
+		sociais: [
+			{
+				name: "Instagram",
+				url: "https://www.instagram.com/barbaraferraz/",
+				icon: ["fab", "instagram"],
+			},
+			{
+				name: "Twitter",
+				url: "https://twitter.com/barbaraferraz",
+				icon: ["fab", "twitter"],
+			},
+		]
+	},
+	{
+		nome: "Isabella Onofre",
+		foto: Isabella,
+		cargo: "Comercial",
+		sociais: [
+			{
+				name: "Instagram",
+				url: "https://www.instagram.com/isabellaonofre/",
+				icon: ["fab", "instagram"],
+			},
+			{
+				name: "Twitch",
+				url: "https://www.twitch.tv/isabellaonofre",
+				icon: ["fab", "twitch"],
+			},
+			{
+				name: "Twitter",
+				url: "https://twitter.com/isabellaonofre",
+				icon: ["fab", "twitter"],
+			},
+		]
+	},
+	{
+		nome: "Lucas 'Fashion King'",
+		foto: Lucas,
+		cargo: "Estilista",
+		sociais: [
+			{
+				name: "Instagram",
+				url: "https://www.instagram.com/luumatheus/",
+				icon: ["fab", "instagram"],
+			}
+		]
+	},
+	{
+		nome: "Thiago Lopes",
+		foto: Thiago,
+		cargo: "Comunicação",
+		sociais: [
+			
 		]
 	},
 	

@@ -24,11 +24,6 @@ class App extends Component {
     return (
       <div id="page-container">
         <ReactNavbar color="rgb(32, 32, 32)" logo={logo} />
-        <div className="photo-render">
-          <div className="render-notices">
-            
-          </div>
-        </div>
         <div id="content-wrap">
           <Router>
             <div className="render-content">

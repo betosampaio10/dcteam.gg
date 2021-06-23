@@ -66,6 +66,18 @@ const useConsumeCpf = () => {
     return [cpf, alterarCpf, statusCpf, alterarStatusCpf]
 }
 
+const useConsumeCpfResponsavel = () => {
+    const [cpfResponsavel, setCpfResponsavel] = useState('')
+    const [statusCpfResponsavel, setStatusCpfResponsavel] = useState(true)
+    const alterarCpfResponsavel = cpfResponsavel => {
+        setCpfResponsavel(cpfResponsavel)
+    }
+    const alterarStatusCpfResponsavel = statusCpfResponsavel => {
+        setStatusCpfResponsavel(statusCpfResponsavel)
+    }
+    return [cpfResponsavel, alterarCpfResponsavel, statusCpfResponsavel, alterarStatusCpfResponsavel]
+}
+
 const useConsumeNome = () => {
     const [nome, setNome] = useState('')
     const [statusNome, setStatusNome] = useState(false)
@@ -76,6 +88,18 @@ const useConsumeNome = () => {
         setStatusNome(statusNome)
     }
     return [nome, alterarNome, statusNome, alterarStatusNome]
+}
+
+const useConsumeNomeResponsavel = () => {
+    const [nomeResponsavel, setNomeResponsavel] = useState('')
+    const [statusNomeResponsavel, setStatusNomeResponsavel] = useState(true)
+    const alterarNomeResponsavel = nomeResponsavel => {
+        setNomeResponsavel(nomeResponsavel)
+    }
+    const alterarStatusNomeResponsavel = statusNomeResponsavel => {
+        setStatusNomeResponsavel(statusNomeResponsavel)
+    }
+    return [nomeResponsavel, alterarNomeResponsavel, statusNomeResponsavel, alterarStatusNomeResponsavel]
 }
 
 const useConsumeEmail = () => {
@@ -246,6 +270,14 @@ const useConsumeTotalInscritos = () => {
     return [totalInscritos, alterarTotalInscritos]
 }
 
+const useConsumeToggleResponsavel = () => {
+    const [toggleResponsavel, setToggleResponsavel] = useState(false)
+    const alterarToggleResponsavel = toggleResponsavel => {
+        setToggleResponsavel(toggleResponsavel)
+    }
+    return [toggleResponsavel, alterarToggleResponsavel]
+}
+
 export const NavigationProvider = ({ children }) => {
     const [modalInscrever, alterarModalInscrever] = useConsumeModalInscrever()
     const [step, alterarStep] = useConsumeAlterarStep()
@@ -255,7 +287,9 @@ export const NavigationProvider = ({ children }) => {
     const [celular, alterarCelular, statusCelular, alterarStatusCelular] = useConsumeCelular()
     const [idade, alterarIdade, statusIdade, alterarStatusIdade] = useConsumeIdade()
     const [cpf, alterarCpf, statusCpf, alterarStatusCpf] = useConsumeCpf()
+    const [cpfResponsavel, alterarCpfResponsavel, statusCpfResponsavel, alterarStatusCpfResponsavel] = useConsumeCpfResponsavel()
     const [nome, alterarNome, statusNome, alterarStatusNome] = useConsumeNome()
+    const [nomeResponsavel, alterarNomeResponsavel, statusNomeResponsavel, alterarStatusNomeResponsavel] = useConsumeNomeResponsavel()
     const [cep, alterarCep, statusCep, alterarStatusCep] = useConsumeCep()
     const [estado, alterarEstado, statusEstado, alterarStatusEstado] = useConsumeEstado()
     const [endereco, alterarEndereco, statusEndereco, alterarStatusEndereco] = useConsumeEndereco()
@@ -271,7 +305,7 @@ export const NavigationProvider = ({ children }) => {
     const [listaIdPsn, alterarListaIdPsn] = useConsumeListaIdPsn()
     const [listaEmail, alterarListaEmail] = useConsumeListaEmail()
     const [totalInscritos, alterarTotalInscritos] = useConsumeTotalInscritos()
- 
+    const [toggleResponsavel, alterarToggleResponsavel] = useConsumeToggleResponsavel()
 
     return (
         <NavigationContext.Provider value={{
@@ -293,8 +327,14 @@ export const NavigationProvider = ({ children }) => {
             alterarCpf: {
                 cpf, alterarCpf, statusCpf, alterarStatusCpf
             },
+            alterarCpfResponsavel: {
+                cpfResponsavel, alterarCpfResponsavel, statusCpfResponsavel, alterarStatusCpfResponsavel
+            },
             alterarNome: {
                 nome, alterarNome, statusNome, alterarStatusNome
+            },
+            alterarNomeResponsavel: {
+                nomeResponsavel, alterarNomeResponsavel, statusNomeResponsavel, alterarStatusNomeResponsavel
             },
             alterarEmail: {
                 email, alterarEmail, statusEmail, alterarStatusEmail
@@ -346,6 +386,9 @@ export const NavigationProvider = ({ children }) => {
             },
             alterarTotalInscritos: {
                 totalInscritos, alterarTotalInscritos
+            },
+            alterarToggleResponsavel: {
+                toggleResponsavel, alterarToggleResponsavel
             }
             
         }

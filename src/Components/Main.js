@@ -82,7 +82,7 @@ class Main extends Component {
         return (<>
             <div className = "center_container home" >
                 <div className = "container_header home_header" >
-                    <span> VÍDEOS DESTAQUES </span> 
+                    <span> VÍDEOS </span> 
                     <div className = "traces" > 
                     </div> 
                     <div className = "traces" > 

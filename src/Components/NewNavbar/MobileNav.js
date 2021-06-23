@@ -69,7 +69,7 @@ const MobileNav = ({ width, logoUrl, background, socialIcon }) => {
         <ul>
           <li>
               <NavLink exact to="/aboutus" onClick={() => {window.location.href="/aboutus"}} activeClassName="home" >
-                DC TEAM
+                SOBRE NÓS
               </NavLink>
           </li>
           <li>

@@ -9,7 +9,6 @@
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-evenly;
-  height: 20vh;
 }
 
 .navSocial a {
@@ -168,3 +167,16 @@
 .home {
   width:125%
 }
+
+.menuNew {
+  height: 80px;
+}
+
+.bar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  height: 80px !important;
+  background-color: orange !important;
+}
+
