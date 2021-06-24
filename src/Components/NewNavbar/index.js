@@ -81,6 +81,7 @@ export const ReactNavbar = ({ color, logo }) => {
                     from={{ height: "100px" }}
                     to={{ height: "100px", background: background }}
                   >
+                    
                     <div className="header">
                       <div className="navLogo">
                         <Router>
