@@ -80,7 +80,7 @@ export const YoutubeVideos = ({}) => {
 class Main extends Component {
     render() {
         return (<>
-            <div className = "center_container home" >
+            <div className = "center_container home mt-2 mb-5" >
                 <div className = "container_header home_header" >
                     <span> VÍDEOS </span> 
                     <div className = "traces" > 

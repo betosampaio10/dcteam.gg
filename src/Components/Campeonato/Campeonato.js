@@ -1,15 +1,27 @@
 import React, { useEffect, useContext } from "react";
-import banner from '../../Assets/Times/fifa_banner2.png';
-import premiacao from '../../Assets/Times/premiacao_campeonato.png';
 import { NavigationContext } from '../../contexts/navigationContext'
 import Inscrever from './Inscrever'
+import Lightning from './Lightning'
+import Regulamento from './Regulamento'
+import Inscricao from './Inscricao'
+import Premiacao from './Premiacao'
+import EmBreve from './EmBreve'
 import { useListarUsuarios } from '../../utils/listarUsuarios'
+import lightningCup from '../../Assets/Campeonato/Lightning Cup.png'
+import inscricao from '../../Assets/Campeonato/Inscricao.png'
+import premiacao from '../../Assets/Campeonato/Premiacao.png'
+import regulamento from '../../Assets/Campeonato/Regulamento.png'
+import inscrevase from '../../Assets/Campeonato/inscrevase.png'
+import poweredby from '../../Assets/Campeonato/poweredby.png'
+import logofifa from '../../Assets/Campeonato/logofifa.png'
+import { useSubmeterDataHora } from '../../utils/submeterDataHora'
 
 import './Campeonato.css';
 
 const Campeonato = () => {
 
 	const [buscarUsuario] = useListarUsuarios()
+	const [submeterDataHora] = useSubmeterDataHora()
 	const navigation = useContext(NavigationContext)
 
 	useEffect(() => {
@@ -39,78 +51,79 @@ const Campeonato = () => {
 		navigation.alterarTotalInscritos.alterarTotalInscritos(totalInscritos)
 	}, [navigation.alterarListaUsuarios.listaUsuarios])
 
-	return (
-		<div className="center_container aboutus">
-			
-			<div className="container_header about_header">
-				<span>Lightning Cup</span>
-				<div className="traces"></div>
-				<div className="traces"></div>
-				<div className="traces"></div>
-			</div>
-			<div className="aboutus_text mb-5">
-				<span className='mb-5'>
-					<p>Lightning Cup é o primeiro campeonato de E-sports na modalidade FIFA Ultimate Team (Plataforma Playstation) organizado pela DC TEAM. Empresa voltada para o cenário de jogos virtuais, com objetivo de criar interatividade entre os competidores de todo o Brasil. A organização é realizada pela equipe da DC TEAM, que oferecerá todo o suporte durante o campeonato. Os jogos serão inicialmente em fase de grupos, podendo ser agendados em um horário acordado entre os adversários. A partir das quartas de final, os jogos terão data e horário fixo, a serem definidos pela organização do campeonato. A final será com jogos de ida e volta.</p>
-					<p></p>
-					<p></p>
-					<p></p>
-				</span>
-			</div>
-			<div className='mt-5 mb-0'>
-				<img src={premiacao} className="img"></img>
-			</div>
-			<div className="aboutus_text">
-				<span>
-					<p></p>
-					<h3>Formato</h3>
-					<p>64 times (FASE DE GRUPOS)</p>
-					<p>16 Grupos com 04 jogadores, a serem definidos por sorteio.</p>
-					<p>A grande final será realizada com jogos de ida e volta</p>
-					<p>Final com Transmissão e Narração</p>
-					<p>Toda estrutura do campeonato será realizada na Arena 17, ao realizar a inscrição você será redirecionado ao link do campeonato.</p>
-					<p></p>
-					<p className="info">* Restrição do elenco: overall 89, mínimo 75 no banco e sem jogadores de empréstimo.</p>
-					<p></p>
-					<h3>Premiações</h3>
-					<p>1 - R$ 1000,00  + Controle Personalizado + Trofeu</p>
-					<p></p>
-					<p>2 - R$ 400,00  + Trofeu</p>
-					<p></p>
-					<p>3 - R$ 200,00 + Troféu</p>
-					<p></p>
-					<p>4 - Kit DC Team</p>
-					<p></p>
-					<p className="info">* Todas as transferencias serão realizadas via PIX.</p>
-					<p></p>
-					<h3>Pagamento e Envio das Premiações:</h3>
-					<p></p>
-					<p>Taxa de inscrição: R$140,00 (Ao realizar a inscrição você ganha uma Camiseta Jersey DC Team personalizada)</p>
-					<p></p>
-					<p>As premiações em dinheiro serão enviadas aos ganhadores no prazo de 120 horas úteis, via PIX. Os itens da premiação serão enviados em até 15 dias úteis após a finalização do campeonato, podendo sofrer alterações devido ao prazo das transportadoras.</p>
-					<p></p>
-					<p className='mb-0'>- Transmissão e Narração profissional da GRANDE FINAL</p>
-					<a href='https://www.twitch.tv/dcteam_gg' className='mt-0'>https://www.twitch.tv/dcteam_gg</a>
-					<p></p>
-					<div>
-						<p className='mb-0'>- Suporte via Whatsapp</p>
-						<a href="https://api.whatsapp.com/send?phone=551193758-2250" className="float mt-0" >
-							<i className="fab fa-whatsapp my-float botao mb-5"></i>
-						</a>
-					</div>
 
+	const inscrever = () => {
+		navigation.alterarModalInscrever.alterarModalInscrever(true)
+		let data = new Date()
+		const form = {
+			data: data.toString()
+		}
+		submeterDataHora(form)
+
+	}
+
+	return (
+		<div className="aboutus">
+			<div>
+				<div className='divLightningCup row'>
+					<div className='col-4 divBtn'>
+						<img className='lightningCup mb-3 cursorPointer' src={lightningCup} onClick={() => navigation.alterarModalLightning.alterarModalLightning(true)} />
+					</div>
+					<div className=' col-4 divBtn'>
+						<img src={logofifa} className='logofifa' />
+					</div>
 					{navigation.alterarTotalInscritos.totalInscritos < 64 &&
-						<div>
-							<button className="button mt-3 mb-2" onClick={() => navigation.alterarModalInscrever.alterarModalInscrever(true)}>Inscrever-se</button>
+						<div className='col-4 Divinscrevase cursorPointer'>
+							<img src={inscrevase} className='inscrevase' onClick={() => inscrever()} />
 						</div>
 					}
-					{navigation.alterarTotalInscritos.totalInscritos >= 64 && <p className='text-danger avisos'>Inscrições Encerradas!!</p>}
-					<Inscrever
-						show={navigation.alterarModalInscrever.modalInscrever}
-						onHide={() => navigation.alterarModalInscrever.alterarModalInscrever(false)} />
-				</span>
-			</div>
 
+				</div>
+				<div className='row mt-5 mb-1 cards'>
+					<div className='col-lg-4 col-md-12 '>
+						<img className='cardsImg cursorPointer' src={premiacao} onClick={() => navigation.alterarModalPremiacao.alterarModalPremiacao(true)} />
+						<div className='divBtn'>
+							<button className='mt-0 cardsBtn' onClick={() => navigation.alterarModalPremiacao.alterarModalPremiacao(true)}>SAIBA MAIS</button>
+						</div>
+					</div>
+					<div className='col-lg-4 col-md-12 '>
+						<img className='cardsImg inscricaoCardImg cursorPointer' src={inscricao} onClick={() => inscrever()} />
+						<div className='divBtn'>
+
+						</div>
+
+					</div>
+					<div className='col-lg-4 col-md-12 '>
+						<img className='cardsImg cursorPointer' src={regulamento} onClick={() => navigation.alterarModalRegulamento.alterarModalRegulamento(true)} />
+						<div className='divBtn'>
+							<button className='mt-0 cardsBtn' onClick={() => navigation.alterarModalRegulamento.alterarModalRegulamento(true)}>SAIBA MAIS</button>
+						</div>
+					</div>
+				</div>
+				<div className='divBtn mb-3'>
+					<img className='poweredby' src={poweredby} />
+				</div>
+			</div>
+			<Inscrever
+				show={navigation.alterarModalInscrever.modalInscrever}
+				onHide={() => navigation.alterarModalInscrever.alterarModalInscrever(false)} />
+			<Lightning
+				show={navigation.alterarModalLightning.modalLightning}
+				onHide={() => navigation.alterarModalLightning.alterarModalLightning(false)} />
+			<Regulamento
+				show={navigation.alterarModalRegulamento.modalRegulamento}
+				onHide={() => navigation.alterarModalRegulamento.alterarModalRegulamento(false)} />
+			<Premiacao
+				show={navigation.alterarModalPremiacao.modalPremiacao}
+				onHide={() => navigation.alterarModalPremiacao.alterarModalPremiacao(false)} />
+			<Inscricao
+				show={navigation.alterarModalInscricao.modalInscricao}
+				onHide={() => navigation.alterarModalInscricao.alterarModalInscricao(false)} />
+			<EmBreve
+				show={navigation.alterarModalEmBreve.modalEmBreve}
+				onHide={() => navigation.alterarModalEmBreve.alterarModalEmBreve(false)} />
 		</div>
+
 	)
 }
 

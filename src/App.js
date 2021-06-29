@@ -16,7 +16,7 @@ import Campeonato from './Components/Campeonato/Campeonato'
 import Pubgm from './Components/Lines/Pubgm'
 import NotFound from './Components/NotFound'
 import logo from './Assets/Logo/Logo1.png'
-
+import whatsapp from './Assets/Campeonato/whatsapp.png'
 import { NavigationProvider } from './contexts/navigationContext'
 
 class App extends Component {
@@ -30,7 +30,6 @@ class App extends Component {
               <Switch>
                 <Route exact path={'/'} component={Main} />
                 <Route path={'/aboutus'} component={withRouter(AboutUs)} />
-                <Route path={'/pubgm'} component={Pubgm} />
                 <NavigationProvider>
                   <Route path={'/campeonato'} component={Campeonato} />
                 </NavigationProvider>
@@ -42,6 +41,9 @@ class App extends Component {
         <div id="footer">
           <Footer />
         </div>
+        <a href="https://api.whatsapp.com/send?phone=551193758-2250" className='float-right' >
+					<img src={whatsapp} className="fab fa-whatsapp whatsIcon"/>
+				</a>
       </div >
     );
   }

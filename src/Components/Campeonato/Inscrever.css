@@ -1,9 +1,64 @@
 .modal {
     font-size:70%;
+    color: white;
 }
 
-.button {
-    background-color: orange;
+.fundoRoxo {
+    background-color: rgb(68, 37, 113);
+}
+
+.modalTextTitle {
+    color:white;
+}
+
+.modalTextConfirmacao {
+    color: black;
+    font-size: 150%;
+    font-weight: normal;
+}
+
+.logoInscrever {
+    height: 70px;
+    width: 70px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logoInscrever {
+    height: 70px;
+    width: 70px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.buttonModal {
+    background-color: rgb(245, 161, 39);
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    border: none;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.buttonConfirmar {
+    background-color: green !important;
+}
+
+.buttonPagamento {
+    background-color: red !important;
 }
 
 .button_camisa {
@@ -22,6 +77,11 @@
     font-size: 200%;
 }
 
+.modalText {
+    font-size:150%;
+    color: white;
+}
+
 .final {
     font-size: 200%;
 }
@@ -29,4 +89,8 @@
 .check {
     font-size: 20px;
     color: green;
+}
+
+.teste {
+    font-weight: normal !important;
 }

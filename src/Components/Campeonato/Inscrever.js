@@ -4,6 +4,7 @@ import { NavigationContext } from '../../contexts/navigationContext'
 import Step1 from './Step1'
 import Step2 from './Step2'
 import Step3 from './Step3'
+import logo from '../../Assets/Logo/Logo1.png'
 
 
 
@@ -25,7 +26,7 @@ const Inscrever = (dados) => {
 				return <Step1 />
 		}
 	}
-	
+
 	const fecharModal = () => {
 		navigation.alterarModalInscrever.alterarModalInscrever(false)
 		navigation.alterarStep.alterarStep(1)
@@ -40,10 +41,11 @@ const Inscrever = (dados) => {
 			show={dados.show}
 			onHide={() => fecharModal()}
 			className='modal'>
-			<Modal.Header closeButton>
-				<Modal.Title id="contained-modal-title-vcenter">Inscrição</Modal.Title>
-			</Modal.Header>
-			<Modal.Body>
+			<Modal.Body className='fundoRoxo'>
+				<div className='fundoRoxo'>
+					<p className='float-right mt-0 mr-1 cursorPointer' onClick={() => fecharModal()}>X</p>
+					<img src={logo} className='logoInscrever' />
+				</div>
 				{renderStep()}
 			</Modal.Body>
 		</Modal >

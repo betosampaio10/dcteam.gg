@@ -255,7 +255,7 @@ let UserStaff = [
 class AboutUs extends Component {
 	render() {
 		return (
-			<div className="center_container aboutus">
+			<div className="center_container aboutusPage">
 				<div className="container_header about_header">
 					<span>SOBRE</span>
 					<div className="traces"></div>

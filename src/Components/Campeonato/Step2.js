@@ -1,44 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { NavigationContext } from '../../contexts/navigationContext'
 import { FormGroup } from 'reactstrap';
-import QrCode from '../../Assets/Logo/qrCodeCampeonato.jpeg'
-import { useSubmeterCadastro } from '../../utils/submeterCadastro'
+import QrCode from '../../Assets/Campeonato/qrCodeCampeonato.jpeg'
+
+import Confirmacao from './Confirmacao'
 
 import './Inscrever.css';
 
-
 const Step2 = () => {
     const navigation = useContext(NavigationContext)
-    const [cadastrarUsuario] = useSubmeterCadastro()
-    const pagamento = ""
-
-    const submeter = () => {
-        cadastrarUsuario(form)
-        navigation.alterarStep.alterarStep(3)
-    }
-
-    const form = {
-        idPsn: navigation.alterarIdPsn.idPsn,
-        nomeTime: navigation.alterarNomeTime.nomeTime,
-        idade: navigation.alterarIdade.idade,
-        cpf: navigation.alterarCpf.cpf,
-        cpfResponsavel: navigation.alterarCpfResponsavel.cpfResponsavel,
-        nome: navigation.alterarNome.nome,
-        nomeResponsavel: navigation.alterarNomeResponsavel.nomeResponsavel,
-        email: navigation.alterarEmail.email,
-        celular: navigation.alterarCelular.celular,
-        cep: navigation.alterarCep.cep,
-        endereco: navigation.alterarEndereco.endereco,
-        numero: navigation.alterarNumero.numero,
-        complemento: navigation.alterarComplemento.complemento,
-        bairro: navigation.alterarBairro.bairro,
-        cidade: navigation.alterarCidade.cidade,
-        estado: navigation.alterarEstado.estado,
-        tamanhoJersey: navigation.alterarTamanhoJersey.tamanhoJersey,
-        personalizacaoNome: navigation.alterarPersonalizacaoNome.personalizacaoNome,
-        personalizacaoNumero: navigation.alterarPersonalizacaoNumero.personalizacaoNumero,
-        pagamento
-    }
 
     return (
         <div>
@@ -73,8 +43,11 @@ const Step2 = () => {
                 </div>
             </FormGroup>
             <div>
-                <button className="button" onClick={() => submeter()}>Inscrever-se</button>
+                <button className='buttonModal' onClick={() => navigation.alterarModalConfirmacao.alterarModalConfirmacao(true)}>FINALIZAR</button>
             </div>
+            <Confirmacao
+                show={navigation.alterarModalConfirmacao.modalConfirmacao}
+                onHide={() => navigation.alterarModalConfirmacao.alterarModalConfirmacao(false)} />
         </div>
     )
 }

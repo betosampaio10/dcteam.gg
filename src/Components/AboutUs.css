@@ -7,10 +7,11 @@
     font-family: Gotham-Bold;
     src: url(../Assets/Fontes/Gotham-Bold.otf);
 }
-.aboutus{
-    top:3%;
+.aboutusPage{
     left:0% !important;
     width: 100% !important;
+    margin-top:10px;
+    margin-bottom: 10px;
 }
 .aboutus_text{
     left:10%;

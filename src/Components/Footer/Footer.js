@@ -10,7 +10,6 @@ export const Footer = () => {
             <ul>
                 <li><a href="/">DC TEAM</a></li>
                 <li><a href="/aboutus">SOBRE</a></li>
-                <li><a href="#">NOTÍCIAS</a></li>
             </ul>
             </div>
             <div className="ft-main-item">

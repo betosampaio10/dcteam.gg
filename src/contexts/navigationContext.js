@@ -10,6 +10,54 @@ const useConsumeModalInscrever = () => {
     return [modalInscrever, alterarModalInscrever]
 }
 
+const useConsumeModalLightning = () => {
+    const [modalLightning, setModalLightning] = useState(false)
+    const alterarModalLightning = modalLightning => {
+        setModalLightning(modalLightning)
+    }
+    return [modalLightning, alterarModalLightning]
+}
+
+const useConsumeModalInscricao = () => {
+    const [modalInscricao, setModalInscricao] = useState(false)
+    const alterarModalInscricao = modalInscricao => {
+        setModalInscricao(modalInscricao)
+    }
+    return [modalInscricao, alterarModalInscricao]
+}
+
+const useConsumeModalConfirmacao = () => {
+    const [modalConfirmacao, setModalConfirmacao] = useState(false)
+    const alterarModalConfirmacao = modalConfirmacao => {
+        setModalConfirmacao(modalConfirmacao)
+    }
+    return [modalConfirmacao, alterarModalConfirmacao]
+}
+
+const useConsumeModalRegulamento = () => {
+    const [modalRegulamento, setModalRegulamento] = useState(false)
+    const alterarModalRegulamento = modalRegulamento => {
+        setModalRegulamento(modalRegulamento)
+    }
+    return [modalRegulamento, alterarModalRegulamento]
+}
+
+const useConsumeModalPremiacao = () => {
+    const [modalPremiacao, setModalPremiacao] = useState(false)
+    const alterarModalPremiacao = modalPremiacao => {
+        setModalPremiacao(modalPremiacao)
+    }
+    return [modalPremiacao, alterarModalPremiacao]
+}
+
+const useConsumeModalEmBreve = () => {
+    const [modalEmBreve, setModalEmBreve] = useState(false)
+    const alterarModalEmBreve = modalEmBreve => {
+        setModalEmBreve(modalEmBreve)
+    }
+    return [modalEmBreve, alterarModalEmBreve]
+}
+
 const useConsumeAlterarStep = () => {
     const [step, setStep] = useState(1)
     const alterarStep = step => {
@@ -280,6 +328,12 @@ const useConsumeToggleResponsavel = () => {
 
 export const NavigationProvider = ({ children }) => {
     const [modalInscrever, alterarModalInscrever] = useConsumeModalInscrever()
+    const [modalLightning, alterarModalLightning] = useConsumeModalLightning()
+    const [modalInscricao, alterarModalInscricao] = useConsumeModalInscricao()
+    const [modalRegulamento, alterarModalRegulamento] = useConsumeModalRegulamento()
+    const [modalPremiacao, alterarModalPremiacao] = useConsumeModalPremiacao()
+    const [modalEmBreve, alterarModalEmBreve] = useConsumeModalEmBreve()
+    const [modalConfirmacao, alterarModalConfirmacao] = useConsumeModalConfirmacao()
     const [step, alterarStep] = useConsumeAlterarStep()
     const [idPsn, alterarIdPsn, statusIdPsn, alterarStatusIdPsn] = useConsumeIdPsn()
     const [nomeTime, alterarNomeTime, statusNomeTime, alterarStatusNomeTime] = useConsumeNomeTime()
@@ -311,6 +365,24 @@ export const NavigationProvider = ({ children }) => {
         <NavigationContext.Provider value={{
             alterarModalInscrever: {
                 modalInscrever, alterarModalInscrever
+            },
+            alterarModalLightning: {
+                modalLightning, alterarModalLightning
+            },
+            alterarModalInscricao: {
+                modalInscricao, alterarModalInscricao
+            },
+            alterarModalRegulamento: {
+                modalRegulamento, alterarModalRegulamento
+            },
+            alterarModalPremiacao: {
+                modalPremiacao, alterarModalPremiacao
+            },
+            alterarModalEmBreve: {
+                modalEmBreve, alterarModalEmBreve
+            },
+            alterarModalConfirmacao: {
+                modalConfirmacao, alterarModalConfirmacao
             },
             alterarStep: {
                 step, alterarStep

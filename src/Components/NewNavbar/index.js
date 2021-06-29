@@ -106,14 +106,14 @@ export const ReactNavbar = ({ color, logo }) => {
                       <div className="navLinks" >
                         <Router>
                           <ul>
-                            <li>
-                              <NavLink to="/aboutus" onClick={() => { window.location.href = "/aboutus" }} className="home">
-                                SOBRE NÓS
+                          <li>
+                              <NavLink to="/" onClick={() => { window.location.href = "/" }} className="home">
+                                VÍDEOS
                               </NavLink>
                             </li>
                             <li>
-                              <NavLink to="/" onClick={() => { window.location.href = "/news" }} className="home">
-                                NOTÍCIAS
+                              <NavLink to="/aboutus" onClick={() => { window.location.href = "/aboutus" }} className="home">
+                                SOBRE NÓS
                               </NavLink>
                             </li>
                             <li>

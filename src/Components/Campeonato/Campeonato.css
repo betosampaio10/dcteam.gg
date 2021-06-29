@@ -1,18 +1,142 @@
 
-@font-face {
-    font-family: Gotham-Book;
-    src: url(../../Assets/Fontes/Gotham-Book.otf);
-}
-@font-face {
-    font-family: Gotham-Bold;
-    src: url(../../Assets/Fontes/Gotham-Bold.otf);
-}
+
 .aboutus{
-    top:3%;
     left:0% !important;
-    margin-bottom: 5%;
     width: 100% !important;
+    background-image: url('../../Assets/Campeonato/Pagina.png');
+    align-items: center;
 }
+
+
+.lightningCup {
+    margin-top: 15px;
+    margin-left: 1%;
+    height: 150px;
+    float:left; 
+}
+
+.inscrevase {
+    height: 70px;
+    display: block;
+    float: right;    
+    margin-top: 50px;
+}
+
+.logofifa {
+    height: 100px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divLightningCup {
+    width: 90% !important;
+    margin: auto;
+}
+
+@media(max-width: 1000px){
+    .lightningCup {
+        margin-top: 5px;
+        margin-left: 1%;
+        height: 70px;
+        float:left; 
+    }
+
+    .inscrevase {
+        height: 20px;
+        display: block;
+        float: right;
+        margin-top: 30px;
+    }
+
+    .logofifa {
+        height: 30px;
+        display: block;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:0px;
+    }
+
+    .divLightningCup {
+        width: 100% !important;
+        margin: auto;
+    }
+}
+
+.cardsImg {
+    display: block;
+    margin-top: 2%;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+
+
+
+.poweredby {
+    height: 70px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.cursorPointer {
+    cursor:pointer
+}
+
+.divBtn {
+    width: 100%;
+    margin: auto;
+    align-items: center;
+}
+
+
+.cardsBtn {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(243, 222, 131);
+    font-size: 1.5rem;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.cards {
+    width: 80%;
+    margin: auto;
+}
+
+
+
+  .raio {
+      height: 100px;
+  }
+
+.whatsDiv {
+      width: 100%;
+      margin: auto;
+      align-items: center;
+}
+
+@media(max-width: 1700px) {
+    .cards{
+        width: 100%;
+    }    
+}
+
+
 .aboutus_text{
     left:10%;
     position: relative;
@@ -112,5 +236,25 @@
 .botao {
     color:#a4c639 ;
     font-size: 4rem;
+}
+
+.whats_Icon{
+    color: #a4c639;
+    font-size: 4rem;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    height: 70px;
+    width: 70px;
+  }
+
+  .whatsIcon{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 999;
+    transition: .5s;
+    height: 70px;
+    width: 70px;
 }
 

@@ -67,14 +67,14 @@ const MobileNav = ({ width, logoUrl, background, socialIcon }) => {
       >
         <Router>
         <ul>
-          <li>
-              <NavLink exact to="/aboutus" onClick={() => {window.location.href="/aboutus"}} activeClassName="home" >
-                SOBRE NÓS
+        <li>
+              <NavLink exact to="/" onClick={() => {window.location.href="/"}} activeClassName="home" >
+                VÍDEOS
               </NavLink>
           </li>
           <li>
-              <NavLink exact to="/" activeClassName="home" >
-                NOTÍCIAS
+              <NavLink exact to="/aboutus" onClick={() => {window.location.href="/aboutus"}} activeClassName="home" >
+                SOBRE NÓS
               </NavLink>
           </li>
           <li>
