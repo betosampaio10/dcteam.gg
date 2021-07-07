@@ -7,6 +7,7 @@ import Inscricao from './Inscricao'
 import Premiacao from './Premiacao'
 import EmBreve from './EmBreve'
 import { useListarUsuarios } from '../../utils/listarUsuarios'
+import { useListarAcessosCadastro } from '../../utils/listarAcessosCadastro'
 import lightningCup from '../../Assets/Campeonato/Lightning Cup.png'
 import inscricao from '../../Assets/Campeonato/Inscricao.png'
 import premiacao from '../../Assets/Campeonato/Premiacao.png'
@@ -21,6 +22,7 @@ import './Campeonato.css';
 const Campeonato = () => {
 
 	const [buscarUsuario] = useListarUsuarios()
+	const [buscarAcessosCadastro] = useListarAcessosCadastro()
 	const [submeterDataHora] = useSubmeterDataHora()
 	const navigation = useContext(NavigationContext)
 
@@ -28,25 +30,27 @@ const Campeonato = () => {
 		buscarUsuario()
 	}, [])
 
+	/*useEffect(() => {
+		buscarAcessosCadastro()
+		console.log(navigation.alterarListaAcessosCadastro.listaAcessosCadastro)
+	}, [navigation.alterarListaUsuarios.listaUsuarios])*/
+
 	useEffect(() => {
 		let keys = []
 		if (navigation.alterarListaUsuarios.listaUsuarios != null) {
 			keys = Object.keys(navigation.alterarListaUsuarios.listaUsuarios)
 		}
 		let cpfs = []
-		let idpsn = []
 		let emails = []
 		let totalInscritos = 0
 		keys.map(key => {
 			emails.push(navigation.alterarListaUsuarios.listaUsuarios[key].email)
-			idpsn.push(navigation.alterarListaUsuarios.listaUsuarios[key].idPsn)
 			cpfs.push(navigation.alterarListaUsuarios.listaUsuarios[key].cpf)
 			if (navigation.alterarListaUsuarios.listaUsuarios[key].pagamento) {
 				totalInscritos = totalInscritos + 1
 			}
 		})
 		navigation.alterarListaCpf.alterarListaCpf(cpfs)
-		navigation.alterarListaIdPsn.alterarListaIdPsn(idpsn)
 		navigation.alterarListaEmail.alterarListaEmail(emails)
 		navigation.alterarTotalInscritos.alterarTotalInscritos(totalInscritos)
 	}, [navigation.alterarListaUsuarios.listaUsuarios])

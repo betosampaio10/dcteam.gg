@@ -27,6 +27,8 @@ const Regulamento = (dados) => {
 				</div>
 				<h3 className='modalTextTitle'>Período do campeonato</h3>
 				<p className='modalText'>O campeonato iniciará dia 09/07 e terá sua final no dia 16/07!</p>
+				<h3 className='modalTextTitle'>Plataforma</h3>
+				<p className='modalText'>Playstation 4</p>
 				<h3 className='modalTextTitle'>Formato</h3>
 				<p className='modalText'>64 times (FASE DE GRUPOS)</p>
 				<p className='modalText'>16 Grupos com 04 jogadores, a serem definidos por sorteio.</p>

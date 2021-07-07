@@ -286,6 +286,14 @@ const useConsumeListaUsuarios = () => {
     return [listaUsuarios, alterarListaUsuarios]
 }
 
+const useConsumeListaAcessosCadastro = () => {
+    const [listaAcessosCadastro, setListaAcessosCadastro] = useState({})
+    const alterarListaAcessosCadastro = listaAcessosCadastro => {
+        setListaAcessosCadastro(listaAcessosCadastro)
+    }
+    return [listaAcessosCadastro, alterarListaAcessosCadastro]
+}
+
 const useConsumeListaCpf = () => {
     const [listaCpf, setListaCpf] = useState({})
     const alterarListaCpf = listaCpf => {
@@ -354,6 +362,7 @@ export const NavigationProvider = ({ children }) => {
     const [personalizacaoNome, alterarPersonalizacaoNome] = useConsumePersonalizacaoNome()
     const [personalizacaoNumero, alterarPersonalizacaoNumero] = useConsumePersonalizacaoNumero()
     const [tamanhoJersey, alterarTamanhoJersey] = useConsumeTamanhoJersey()
+    const [listaAcessosCadastro, alterarListaAcessosCadastro] = useConsumeListaAcessosCadastro()
     const [listaUsuarios, alterarListaUsuarios] = useConsumeListaUsuarios()
     const [listaCpf, alterarListaCpf] = useConsumeListaCpf()
     const [listaIdPsn, alterarListaIdPsn] = useConsumeListaIdPsn()
@@ -446,6 +455,9 @@ export const NavigationProvider = ({ children }) => {
             },
             alterarListaUsuarios: {
                 listaUsuarios, alterarListaUsuarios
+            },
+            alterarListaAcessosCadastro: {
+                listaAcessosCadastro, alterarListaAcessosCadastro
             },
             alterarListaCpf: {
                 listaCpf, alterarListaCpf
